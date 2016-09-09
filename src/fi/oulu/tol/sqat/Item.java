@@ -5,6 +5,9 @@ public class Item {
     String name;
     int sellIn; 
     int quality; 
+    int age;
+    int sellingDate;
+    boolean qualityDrop;
     
     public Item(String name, int sellIn, int quality) {
 		this.setName(name);
@@ -30,6 +33,24 @@ public class Item {
 	}
 	public void setQuality(int quality) {
 		this.quality = quality;
+	}
+	
+	public int getAge(){
+		return age;
+	}
+	public void setAge(int age){
+		this.age = age;
+	}
+	
+	public int getSellingDate(){
+		return sellingDate;
+	}
+	public void setSellingDate(int sellingDate){
+		this.sellingDate = sellingDate;
+	}
+	
+	public void setQualityDrop(boolean qualityDrop){
+		this.qualityDrop = qualityDrop;
 	}
 }
 

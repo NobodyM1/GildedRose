@@ -19,6 +19,7 @@ public class GildedRose {
 	public GildedRose() {
 		items = new ArrayList<Item>();
 	}
+	
     public static void updateEndOfDay()
     {
         for (int i = 0; i < items.size(); i++)
@@ -92,6 +93,13 @@ public class GildedRose {
                     }
                 }
             }
+            
+            // Checks if selling date has passed
+            if (items.get(i).getAge() > items.get(i).getSellingDate()){
+            	items.get(i).setQualityDrop(true);
+            }
+            
+            
         }
     }
 

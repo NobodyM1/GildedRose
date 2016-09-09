@@ -36,7 +36,27 @@ public class GildedRoseTest {
 	}
     
 	@Test
-	public void testUpdateEndOfDay() {
-		fail("Test not implemented");
+	public void testUpdateEndOfDay_ConjuredManaCake() {
+		GildedRose store = new GildedRose();
+		store.addItem(new Item("Conjured Mana Cake", 3, 6));
+		
+		store.updateEndOfDay();
+		
+		List<Item> items = store.getItems();
+		Item itemBrie = items.get(0);
+		assertEquals(5, itemBrie.getQuality());
+
+	}
+	
+	@Test
+	public void testUpdateEndOfDay_storingItem(){
+		GildedRose store = new GildedRose();
+		store.addItem(new Item("Sulfuras, Hand of Ragnaros", 0, 80));
+		
+		store.updateEndOfDay();
+		
+		List<Item> items = store.getItems();
+		Item itemBrie = items.get(0);
+		assertEquals("Sulfuras, Hand of Ragnaros", itemBrie.getName());
 	}
 }
